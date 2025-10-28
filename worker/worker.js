@@ -50,10 +50,14 @@ async function postMessage(req, env, cors) {
 
   const id = crypto.randomUUID();
   const clean = text.slice(0, 280);
-  await env.DB.exec(
-    'INSERT INTO messages (id, geohash, text, lat, lng, created_at) VALUES (?, ?, ?, ?, ?, datetime("now"))',
-    [id, geohash, clean, lat, lng],
+
+  // ISO-ish timestamp from SQLite so reads sort correctly
+  const stmt = env.DB.prepare(
+    'INSERT INTO messages (id, geohash, text, lat, lng, created_at) ' +
+    'VALUES (?, ?, ?, ?, ?, strftime("%Y-%m-%dT%H:%M:%fZ","now"))'
   );
+  await stmt.bind(id, geohash, clean, lat, lng).run();
+
   return json({ ok: true, id }, cors);
 }
 
