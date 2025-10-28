@@ -5,8 +5,8 @@ compatibility_date = "2024-06-20"
 [[d1_databases]]
 binding = "DB"
 database_name = "graffiti"
-database_id = "<copy-from-dashboard>"
+database_id = "cdc03806-27a5-4661-8479-f8191b9ca3bc"
 
 [[kv_namespaces]]
 binding = "KV"
-id = "<copy-from-dashboard>"
+id = "2a275d569e7144cba0c23324585cdd34"
