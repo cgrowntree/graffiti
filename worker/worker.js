@@ -46,7 +46,7 @@ async function postMessage(req, env, cors) {
   const now = Date.now();
   const last = await env.KV?.get(key);
   if (last && now - parseInt(last, 10) < 15000) return new Response('slow down', { status: 429, headers: cors });
-  await env.KV?.put(key, String(now), { expirationTtl: 20 });
+  await env.KV?.put(key, String(now), { expirationTtl: 60 });
 
   const id = crypto.randomUUID();
   const clean = text.slice(0, 280);
