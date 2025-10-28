@@ -1,0 +1,30 @@
+:root {
+  --bg: #0b0c0e;
+  --fg: #e6e7e9;
+  --muted: #9aa3ad;
+  --card: #121417;
+  --line: #1e2327;
+  --accent: #f5f5f5;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; background: var(--bg); color: var(--fg);
+  font: 15px/1.5 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.visually-hidden { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+a { color: var(--fg); text-decoration: underline; }
+header { position: sticky; top: 0; background: rgba(11,12,14,.9); backdrop-filter: saturate(120%) blur(6px);
+  border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; }
+.brand { font-weight: 800; letter-spacing: .5px; cursor: pointer; }
+.actions { display: flex; gap: 12px; align-items: center; }
+.btn { background: var(--accent); color: #111; border: 1px solid #d0d0d0; padding: 10px 14px; border-radius: 10px; cursor: pointer; font-weight: 700; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.chip { display: inline-block; padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+main { max-width: 680px; margin: 0 auto; padding: 16px; }
+.notice { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin: 16px 0; }
+.center { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.wall { display: flex; flex-direction: column; gap: 8px; margin: 12px 0 96px; }
+.note { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.note time { display: block; color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+.composer { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(11,12,14,.98); border-top: 1px solid var(--line);
+  padding: 10px 12px; display: flex; gap: 8px; align-items: center; }
+textarea { flex: 1; min-height: 44px; max-height: 140px; background: var(--card); color: var(--fg); border: 1px solid var(--line); border-radius: 10px; padding: 10px; resize: vertical; }
+.subtle { color: var(--muted); font-size: 12px; }

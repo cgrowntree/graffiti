@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>graffiti</title>
+    <meta name="description" content="Presence-only digital graffiti. Read & leave notes only when you're physically here." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand" id="brandLink">graffiti</div>
+      <div class="actions">
+        <a href="/about.html">about</a>
+        <span id="status" class="chip">idle</span>
+      </div>
+    </header>
+
+    <main>
+      <section id="landing" class="notice center">
+        <div>
+          <strong>Presence-only notes.</strong>
+          Read and leave text only when you're physically here.
+          Your location is used <em>just now</em> to check access; nothing is stored about you.
+        </div>
+        <button id="enterBtn" class="btn">enter this place</button>
+        <div class="subtle">tip: if you move, tap <em>graffiti</em> to recheck location.</div>
+      </section>
+
+      <section id="wallSection" hidden>
+        <div class="notice" id="wallHeader">tile: <span id="tileLabel">—</span></div>
+        <div id="wall" class="wall" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <div class="composer" id="composer" hidden>
+      <label class="visually-hidden" for="msg">message</label>
+      <textarea id="msg" placeholder="leave a note… (280 chars max)" maxlength="280"></textarea>
+      <button id="postBtn" class="btn">post</button>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
